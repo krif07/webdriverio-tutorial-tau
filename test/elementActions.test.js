@@ -5,11 +5,9 @@ const loginPage = require("../pages/login.page");
 const securePage = require("../pages/secure.page");
 const hoversPage = require("../pages/hovers.page");
 const keyPressPage = require("../pages/keyPress.page");
-const windowsPage = require("../pages/windows.page");
-const newWindowPage = require("../pages/newWindow.page");
 
 describe(' Test element actions', () => {
-    
+
     it('Should click element', () => {
         internetPage.open();
         internetPage.clickOnLink(1);
@@ -71,26 +69,7 @@ describe(' Test element actions', () => {
     it('Should scroll into view', ()=> {
         internetPage.open();
         internetPage.pageFooter.scrollIntoView();
-        assert.equal(true, internetPage.pageFooter.isDisplayedInViewport());        
-    });
-
-    it('Should Scroll to footer', ()=> {
-        internetPage.open();
-        internetPage.pageHeader.waitForDisplayed();
-        internetPage.pageHeader.scrollIntoView();
-        //internetPage.scrollToPageFooter(); // No funciona si está fuera de vista               
-        //assert.equal(true, internetPage.pageFooter.isDisplayedInViewport());
-    });
-
-    it('Should open new window', () => {
-        windowsPage.open();
-        assert.equal(windowsPage.getTitle(), "Opening a new window");
-        windowsPage.clickLink();
-        let path = 'windows/new';
-        windowsPage.switchWindow(`https://the-internet.herokuapp.com/${path}`);
-        assert.equal(true, newWindowPage.title.isExisting());
-        assert.equal(newWindowPage.getTitle(), "New Window");
-        //expect(browser).toHaveUrlContaining(path);
+        assert.equal(true, internetPage.pageFooter.isDisplayedInViewport());
     });
 
 });
