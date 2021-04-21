@@ -4,7 +4,9 @@
   "description": "WebdriverIO tuturial",
   "main": "index.js",
   "scripts": {
-    "test": "wdio ./wdio.conf.js"
+    "test": "wdio ./wdio.conf.js",
+    "actions": "./node_modules/.bin/wdio wdio.conf.js --suite actions",
+    "waits": "./node_modules/.bin/wdio wdio.conf.js --suite waits"
   },
   "author": "Cristian Dávila",
   "license": "ISC",

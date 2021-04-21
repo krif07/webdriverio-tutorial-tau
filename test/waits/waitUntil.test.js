@@ -1,5 +1,5 @@
 const { expect, assert } = require('chai');
-const dynamicControlsPage = require('../pages/dynamicControls.page');
+const dynamicControlsPage = require('../../pages/dynamicControls.page');
 
 describe('Wait Until', () => {
     it('Should wait until remove the a checkbox to Add', () => {

@@ -1,4 +1,4 @@
-const addRemoveElementsPage = require('../pages/addRemoveElements.page');
+const addRemoveElementsPage = require('../../pages/addRemoveElements.page');
 describe('Wait For Exist', () => {
     it('Should wait until the delete button exists', () => {
         addRemoveElementsPage.open();

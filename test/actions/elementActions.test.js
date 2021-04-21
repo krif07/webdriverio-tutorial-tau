@@ -1,10 +1,11 @@
 const { expect, assert } = require("chai");
-const internetPage = require("../pages/internet.page");
-const checkboxesPage = require("../pages/checkboxes.page");
-const loginPage = require("../pages/login.page");
-const securePage = require("../pages/secure.page");
-const hoversPage = require("../pages/hovers.page");
-const keyPressPage = require("../pages/keyPress.page");
+const internetPage = require("../../pages/internet.page");
+const checkboxesPage = require("../../pages/checkboxes.page");
+const loginPage = require("../../pages/login.page");
+const securePage = require("../../pages/secure.page");
+const hoversPage = require("../../pages/hovers.page");
+const keyPressPage = require("../../pages/keyPress.page");
+const loginData = require('../../data/loginData');
 
 describe(' Test element actions', () => {
 
@@ -33,12 +34,12 @@ describe(' Test element actions', () => {
 
     it('Should not login', () => {
         loginPage.open();
-        loginPage.login("tomsmith", "Itsnotthepassword");
+        loginPage.login(loginData.userName, "Itsnotthepassword");
         expect(loginPage.getFlashError()).to.include('Your password is invalid!');
     });
 
     it('Should login', () => {
-        loginPage.login("tomsmith", "SuperSecretPassword!");
+        loginPage.login(loginData.userName, loginData.password);
         expect(securePage.getFlashSuccess()).to.include("You logged into a secure area!");
     });
 

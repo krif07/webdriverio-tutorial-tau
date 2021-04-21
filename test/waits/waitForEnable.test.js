@@ -1,6 +1,6 @@
 const { expect, assert } = require("chai");
-const internetPage = require("../pages/internet.page");
-const dynamicControlsPage = require("../pages/dynamicControls.page");
+const internetPage = require("../../pages/internet.page");
+const dynamicControlsPage = require("../../pages/dynamicControls.page");
 
 describe('Wait For Enabled', ()=> {
     it('Should wait for the input field to be enabled', () => {
